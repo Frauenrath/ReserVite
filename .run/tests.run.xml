@@ -1,0 +1,26 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="tests" type="DatabaseScript" focusToolWindowBeforeRun="true">
+    <script-file value="$PROJECT_DIR$/backend/tests/test_01_login.sql" />
+    <script-file value="$PROJECT_DIR$/backend/tests/test_02_impersonation.sql" />
+    <script-file value="$PROJECT_DIR$/backend/tests/test_03_reset_database.sql" />
+    <script-file value="$PROJECT_DIR$/backend/tests/test_04.00_br_email_unique.sql" />
+    <script-file value="$PROJECT_DIR$/backend/tests/test_04.0_checks.sql" />
+    <script-file value="$PROJECT_DIR$/backend/tests/test_04.01_br_reserv_user_client.sql" />
+    <script-file value="$PROJECT_DIR$/backend/tests/test_04.02_br_reservations_capacity.sql" />
+    <script-file value="$PROJECT_DIR$/backend/tests/test_04.03_br_tables_reservations_matches.sql" />
+    <script-file value="$PROJECT_DIR$/backend/tests/test_04.04_br_heure_reservation_interval.sql" />
+    <script-file value="$PROJECT_DIR$/backend/tests/test_04.05_br_heure_reservation_correspondance.sql" />
+    <script-file value="$PROJECT_DIR$/backend/tests/test_04.06_br_limite_reservation_for_table.sql" />
+    <script-file value="$PROJECT_DIR$/backend/tests/test_04.07_br_services.sql" />
+    <script-file value="$PROJECT_DIR$/backend/tests/test_04.08_br_create_or_modify_hours.sql" />
+    <script-file value="$PROJECT_DIR$/backend/tests/test_04.09_br_reservation_create_pending.sql" />
+    <script-file value="$PROJECT_DIR$/backend/tests/test_04.10_br_resto_atleast_one_manager.sql" />
+    <script-file value="$PROJECT_DIR$/backend/tests/test_04.11_br_prevent_update_on_final_status.sql" />
+    <script-file value="$PROJECT_DIR$/backend/tests/test_04.12_br_pending_cancelled_no_tables.sql" />
+    <script-file value="$PROJECT_DIR$/backend/tests/test_04.13_br_same_day_or_services_have_same_status.sql" />
+    <script-file value="$PROJECT_DIR$/backend/tests/test_04.14_br_prevent_past_reservations.sql" />
+    <script-mode>FILE</script-mode>
+    <data-source id="6d275bb5-c69c-4f95-bc29-f6a29631655b" namespace="database/&quot;prbd-2526-f02&quot;" />
+    <method v="2" />
+  </configuration>
+</component>

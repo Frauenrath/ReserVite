@@ -1,0 +1,34 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="backend" type="DatabaseScript" focusToolWindowBeforeRun="true">
+    <script-file value="$PROJECT_DIR$/backend/scripts/01_init.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/02_security.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/03_tables_and_data.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/04.00_checks.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/04.01_br_reserv_user_client.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/04.02_br_reservations_capacity.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/04.03_br_tables_reservations_matches.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/04.04_br_heure_reservation_intervale.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/04.05_br_heure_reservation_correspondance.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/04.06_br_limite_reservation_for_table.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/04.07_br_services.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/04.08_br_create_or_modify_hours.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/04.09_br_reservation_create_pending.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/04.10_br_resto_atleast_one_manager.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/04.11_br_prevent_update_on_final_status.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/04.12_br_pending_cancelled_no_tables.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/04.13_br_same_day_or_services_have_same_status.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/04.14_br_prevent_past_reservations.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/05.01_ep_signup.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/05.02_ep_reservation.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/05.03_ep_restaurant.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/05.04_ep_service.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/05.05_ep_system_time.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/05.06_ep_tables.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/06.01_visitor_right_of_access.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/06.02_client_right_of_access.sql" />
+    <script-file value="$PROJECT_DIR$/backend/scripts/06.03_manager_right_of_access.sql" />
+    <script-mode>FILE</script-mode>
+    <data-source id="6d275bb5-c69c-4f95-bc29-f6a29631655b" namespace="database/&quot;prbd-2526-f02&quot;" />
+    <method v="2" />
+  </configuration>
+</component>
