@@ -1,6 +1,6 @@
 # ReserVite – Système de Gestion & Réservation de Restaurants Sécurisé
 
-## 📝 À quoi sert l'application ?
+## À quoi sert l'application ?
 **ReserVite** est une solution logicielle d'entreprise complète (Full-Stack) dédiée à la gestion centralisée et à la réservation de tables de restaurants. L'application est articulée autour de deux profils d'utilisateurs authentifiés :
 * **Les Clients :** Qui peuvent rechercher des restaurants par critères (ville, fourchette de prix), consulter les créneaux disponibles et planifier, modifier ou annuler leurs réservations.
 * **Les Managers :** Qui supervisent les établissements qui leur sont assignés, valident les demandes en attente (*pending*) et y assignent physiquement les tables.
@@ -9,7 +9,7 @@ Le cœur de ce projet repose sur une architecture **"Database-First"** et **"Sec
 
 ---
 
-## 🚀 Fonctionnalités clés & Règles métier gérées
+## Fonctionnalités clés & Règles métier gérées
 
 ### 1. Moteur de Base de Données Avancé (PostgreSQL)
 * **Intégrité transactionnelle stricte :** Implémentation de contraintes de vérification (*Check Constraints*), d'unicité (indépendante de la casse et après *trim*) et de clés étrangères pour interdire toute corruption de données.
@@ -28,7 +28,7 @@ Le cœur de ce projet repose sur une architecture **"Database-First"** et **"Sec
 
 ---
 
-## 🛠️ Technologies utilisées
+## Technologies utilisées
 
 * **Backend & Données :** PostgreSQL (Triggers, Fonctions PL/pgSQL, Types composites)
 * **Couche API :** PostgREST (Mapping automatique des fonctions de base de données en terminaux REST)
@@ -38,7 +38,7 @@ Le cœur de ce projet repose sur une architecture **"Database-First"** et **"Sec
 
 ---
 
-## 💻 Comment utiliser et lancer le projet ?
+## Comment utiliser et lancer le projet ?
 
 ### 1. Déploiement du Backend (PostgreSQL)
 1. Créez une base de données nommée conformément aux consignes académiques dans votre instance locale.
@@ -67,9 +67,14 @@ Le cœur de ce projet repose sur une architecture **"Database-First"** et **"Sec
 
 ---
 
-## 📋 Note de livraison & Données de test
+## Note de livraison
 
 Pour faciliter l'utilisation du projet, les features de débogage sont accessibles :
 
+## Captures d'érans
 
+![login-screen.png](Screenshots/login-screen.png)
 
+![reservation-details.png](Screenshots/reservation-details.png)
+
+![reservation-list.png](Screenshots/reservation-list.png)
