@@ -38,35 +38,6 @@ Le cœur de ce projet repose sur une architecture **"Database-First"** et **"Sec
 
 ---
 
-## Comment utiliser et lancer le projet ?
-
-### 1. Déploiement du Backend (PostgreSQL)
-1. Créez une base de données nommée conformément aux consignes académiques dans votre instance locale.
-2. Exécutez les scripts d'initialisation de votre dossier `backend` dans l'ordre séquentiel strict pour monter la structure et charger les déclencheurs :
-    * `01_init.sql` : Création du schéma et extensions.
-    * `02_security.sql` : Configuration des rôles et hachage des mots de passe.
-    * `03_tables_and_data.sql` : Schéma de données imposé et injection des jeux de tests.
-    * `04.00_checks.sql` : Déploiement des contraintes de vérification (*Check*).
-    * `04.xx_br_xxxx.sql` : Activation des triggers de sécurité métier.
-
-### 2. Lancement de la couche API
-1. Configurez et lancez votre instance **PostgREST** en la connectant à votre base de données locale.
-2. Assurez-vous que l'API écoute bien sur l'URL de référence : `http://localhost:3000/`.
-3. Vous pouvez utiliser le fichier `.http` inclus pour tester la validité des *endpoints* de lecture et d'écriture.
-
-### 3. Exécution de l'application cliente (Flutter)
-1. Assurez-vous de disposer du SDK Flutter configuré sur votre machine.
-2. Récupérez les dépendances du projet depuis la racine de l'application :
-   ```bash
-   flutter pub get
-   ```
-3. Lancez la compilation de l'application sur la cible de test obligatoire (Windows Desktop) :
-   ```bash
-   flutter run -d windows
-   ```
-
----
-
 ## Note de livraison
 
 Pour faciliter l'utilisation du projet, les features de débogage sont accessibles :
