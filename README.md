@@ -1,48 +1,55 @@
-# ReserVite – Système de Gestion & Réservation de Restaurants Sécurisé
+# ReserVite – Secure Restaurant Management & Reservation System
 
-## À quoi sert l'application ?
-**ReserVite** est une solution logicielle d'entreprise complète (Full-Stack) dédiée à la gestion centralisée et à la réservation de tables de restaurants. L'application est articulée autour de deux profils d'utilisateurs authentifiés :
-* **Les Clients :** Qui peuvent rechercher des restaurants par critères (ville, fourchette de prix), consulter les créneaux disponibles et planifier, modifier ou annuler leurs réservations.
-* **Les Managers :** Qui supervisent les établissements qui leur sont assignés, valident les demandes en attente (*pending*) et y assignent physiquement les tables.
-
-Le cœur de ce projet repose sur une architecture **"Database-First"** et **"Security by Design"** : 100 % des règles de calcul complexes (chevauchement des horaires, capacités maximales des tables, intégrité temporelle) et de l'étanchéité des données sont contrôlées et exécutées directement au niveau du serveur de base de données.
+**ReserVite** is a comprehensive full-stack enterprise software solution dedicated to the centralized management and reservation of restaurant tables.
 
 ---
 
-## Fonctionnalités clés & Règles métier gérées
+## What is the application for?
 
-### 1. Moteur de Base de Données Avancé (PostgreSQL)
-* **Intégrité transactionnelle stricte :** Implémentation de contraintes de vérification (*Check Constraints*), d'unicité (indépendante de la casse et après *trim*) et de clés étrangères pour interdire toute corruption de données.
-* **Triggers de règles métier (BR-xx) :** Développement de déclencheurs automatiques pour automatiser les contrôles multicritères :
-    * **BR-02 & BR-06 :** Blocage automatique si le nombre de convives dépasse la capacité cumulée des tables assignées, et interdiction de surréservation d'une table sur un même créneau.
-    * **BR-04 & BR-05 :** Alignement dynamique et obligatoire des heures de réservation sur les créneaux propres du restaurant (10, 15, 20, 30 ou 60 min) et sur ses heures d'ouverture.
-    * **BR-09 & BR-11 :** Gestion du cycle de vie immuable d'une réservation (`pending` → `confirmed` → `completed`/`cancelled`) avec verrouillage des données dès qu'un statut final est atteint.
+The application is structured around two authenticated user profiles:
+* **Clients:** Can search for restaurants by criteria (city, price range), view available time slots, and schedule, modify, or cancel their reservations.
+* **Managers:** Supervise their assigned establishments, validate pending requests, and physically assign tables to them.
 
-### 2. API REST Étanche (PostgREST)
-* **Architecture RPC (Remote Procedure Call) :** Sécurisation absolue de la couche réseau. L'API web ne donne accès qu'à des fonctions stockées PostgreSQL, masquant totalement la structure des tables sous-jacentes.
-* **Contrôle d'accès à 3 niveaux :** Filtrage systématique des requêtes HTTP (GET/POST) validant l'authentification (jetons sécurisés), le rôle utilisateur (Client vs Manager) et le lien de propriété avec la ressource (un client ne peut lire ou modifier que ses propres réservations).
-
-### 3. Interface Graphique Réactive (Flutter & Riverpod)
-* **Gestion d'état centralisée :** Utilisation fine du framework **Riverpod** pour garantir une synchronisation immédiate et locale des listes et compteurs dès qu'une action de mutation (création, annulation) est validée.
-* **Ergonomie métier :** Recherche dynamique avec système de pause (*Debounce*) pour soulager le serveur, notifications push en bas d'écran en cas d'erreur métier, et boîtes de dialogue de confirmation de sécurité.
+At the core of this project is a **"Database-First"** and **"Security by Design"** architecture: 100% of complex calculation rules (schedule overlaps, maximum table capacities, temporal integrity) and data isolation are controlled and executed directly at the database server level.
 
 ---
 
-## Technologies utilisées
+## Key Features & Managed Business Rules
 
-* **Backend & Données :** PostgreSQL (Triggers, Fonctions PL/pgSQL, Types composites)
-* **Couche API :** PostgREST (Mapping automatique des fonctions de base de données en terminaux REST)
-* **Frontend Mobile/Desktop :** Dart, Flutter (Cible principale : Windows Desktop)
-* **Gestion d'État :** Riverpod
-* **Outils d'intégration & Tests :** IntelliJ REST Client (fichiers `.http`), BitBucket (Git), Postman (conception)
+### 1. Advanced Database Engine (PostgreSQL)
+* **Strict transactional integrity:** Implementation of check constraints, case-insensitive and trimmed uniqueness constraints, and foreign keys to prevent any data corruption.
+* **Business rule triggers (BR-xx):** Development of automated triggers to handle multi-criteria checks:
+  * **BR-02 & BR-06:** Automatic blocking if the guest count exceeds the cumulative capacity of assigned tables, and prohibition of double-booking a table within the same time slot.
+  * **BR-04 & BR-05:** Dynamic and mandatory alignment of reservation times with the restaurant's specific time intervals (10, 15, 20, 30, or 60 min) and opening hours.
+  * **BR-09 & BR-11:** Immutable lifecycle management of a reservation (`pending` → `confirmed` → `completed`/`cancelled`) with data locking once a final status is reached.
+
+### 2. Watertight REST API (PostgREST)
+* **RPC (Remote Procedure Call) Architecture:** Absolute security at the network layer. The web API only exposes PostgreSQL stored functions, completely hiding the underlying table structure.
+* **3-Level Access Control:** Systematic HTTP request filtering (GET/POST) validating authentication (secure tokens), user role (Client vs. Manager), and resource ownership (a client can only read or modify their own reservations).
+
+### 3. Reactive Graphical Interface (Flutter & Riverpod)
+* **Centralized State Management:** Fine-tuned use of the Riverpod framework to ensure immediate local synchronization of lists and counters whenever a mutation action (creation, cancellation) is validated.
+* **Business Ergonomics:** Dynamic search with a debouncing system to relieve server load, bottom-of-screen push notifications for business errors, and security confirmation dialogs.
 
 ---
 
-## Note de livraison
+## Technologies Used
 
-Pour faciliter l'utilisation du projet, les features de débogage sont accessibles :
+* **Backend & Data:** PostgreSQL (Triggers, PL/pgSQL Functions, Composite Types)
+* **API Layer:** PostgREST (Automatic mapping of database functions to REST endpoints)
+* **Mobile/Desktop Frontend:** Dart, Flutter (Main target: Windows Desktop)
+* **State Management:** Riverpod
+* **Integration & Testing Tools:** IntelliJ REST Client (`.http` files), BitBucket (Git), Postman (design)
 
-## Captures d'érans
+---
+
+## Delivery Note
+
+To facilitate testing and usage of the project, debugging features are accessible.
+
+---
+
+## Screenshots
 
 ![login-screen.png](Screenshots/login-screen.png)
 
